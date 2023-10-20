@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Other CSS styles or inline styles can be included here -->
+</head>
+<body>
+    
+    <!-- <form method="POST" enctype="multipart/form-data" action="/upload">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form> -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+<form method="POST" enctype="multipart/form-data" action="/upload" class="form-container">
+	
+	<div class="upload-files-container">
+        <h1>ADC Bank File Format</h1>
+		
+		<div class="drag-file-area">
+			<span class="material-icons-outlined upload-icon"> file_upload </span>
+			<h3 class="dynamic-message"> Drag & drop any file here </h3>
+			<!-- <input type="file" name="file"> -->
+				<!-- <input type="submit" value="Upload"> -->
+			
+				<!-- <label for="file">Select a file:</label>  -->
+            
+			<label class="label"> or <span class="browse-files"></span>
+			<input type="file" name="file" id="file" class="default-file-input" accept=".xlsx, .xls" style="display: none;"> 
+            <span for = "file" class="browse-files-text">browse file</span>
+            <span>from device</span> </span> </label> 
+	
+				
+		</div>
+		
+
+		<span class="cannot-upload-message"> <span class="material-icons-outlined">error</span> Please select a file first <span class="material-icons-outlined cancel-alert-button">cancel</span> </span>
+	
+		<div class="file-block">
+			<div class="file-info"> <span class="material-icons-outlined file-icon">description</span> <span class="file-name"> </span> | <span class="file-size">  </span> </div>
+			<span class="material-icons remove-file-icon">delete</span>
+			<div class="progress-bar"> </div>
+		</div>
+
+		
+		<button type="submit" class="upload-button" id="submit-button">
+			<span id="button-text">Upload File</span>
+			<!-- <div class="loader" id="loader"></div> -->
+		</button>
+
+		
+			
+	
+
+        
+	</div>
+</form>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
